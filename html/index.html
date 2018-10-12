@@ -3,12 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatta Meal</title>
-    <script src="" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Whatta Meal</title>
 </head>
+<style>
+    #user-alert  {
+        display: 'block'
+    }
+</style>
 <body>
-    <button id="test-button" type="button" name="button">Users</button>
+
+    <h1 class="display-3 m-1">Whatta Meal</h1>
+    <button class="btn btn-primary btn-lg" id="test-button" type="button" name="button">USERS</button>
+    <button class="btn btn-primary btn-lg" id="test-recipe" type="button" name="button">RECIPES</button>
+    <div class="container m-1">
+        <div id="users-body">
+
+        </div>
+    </div>
+
+    <div class="alert alert-info" id="user-alert">You created an account</div>
+        <form action="" class="form">
+            <div class="form-group">
+                <label for="userName" class="control-label">
+                    Username:
+                </label>
+                <input type="text" class="form-control" id="userName">
+            </div>
+            <div class="form-group">
+                <label for="userPassword" class="control-label">
+                    Password:
+                </label>
+                <input type="password" class="form-control" id="userPassword">
+            </div>
+            <div class="form-group">
+               <button id='pressHarder' type='button' class="btn btn-lg btn-primary">
+                   SUBMIT
+               </button>
+            </div>
+        </form>
+    </div>
+    
+    <!--==========================================================================================-->
+    
+    <!--==========================================================================================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="../templates/users.template.js"></script>
+    <script src="../render/users.render.js"></script>
+    <script src="../templates/recipes.template.js"></script>
+    <script src="../render/recipes.render.js"></script>
 </body>
 </html>
