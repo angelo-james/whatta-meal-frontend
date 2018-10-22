@@ -8,43 +8,28 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Whatta Meal</title>
 </head>
-<style>
-    #user-alert  {
-        display: 'block'
-    }
-</style>
 <body>
 
-    <h1 class="display-3 m-1">Whatta Meal</h1>
-    <button class="btn btn-primary btn-lg" id="test-button" type="button" name="button">USERS</button>
-    <button class="btn btn-primary btn-lg" id="test-recipe" type="button" name="button">RECIPES</button>
-    <div class="container m-1">
-        <div id="users-body">
-
+    <h1 class="display-3 m-1" style="text-align:center">Whatta Meal</h1>
+        <div class="container border">
+            <form onsubmit="validateUser(event)" class="form">
+                <div class="form-group">
+                    <label for="userName" class="control-label">
+                        Email:
+                    </label>
+                    <input required type="text" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="userPassword" class="control-label">
+                        Password:
+                    </label>
+                    <input required type="password" class="form-control" id="userPassword">
+                </div>
+                <div class="form-group">
+                <input id='pressHarder' type='submit' class="btn btn-lg btn-primary" value="Sign In">
+                </div>
+            </form>
         </div>
-    </div>
-
-    <div class="alert alert-info" id="user-alert">You created an account</div>
-        <form action="" class="form">
-            <div class="form-group">
-                <label for="userName" class="control-label">
-                    Username:
-                </label>
-                <input type="text" class="form-control" id="userName">
-            </div>
-            <div class="form-group">
-                <label for="userPassword" class="control-label">
-                    Password:
-                </label>
-                <input type="password" class="form-control" id="userPassword">
-            </div>
-            <div class="form-group">
-               <button id='pressHarder' type='button' class="btn btn-lg btn-primary">
-                   SUBMIT
-               </button>
-            </div>
-        </form>
-    </div>
     
     <!--==========================================================================================-->
     
@@ -54,5 +39,6 @@
     <script src="../render/users.render.js"></script>
     <script src="../templates/recipes.template.js"></script>
     <script src="../render/recipes.render.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 </html>

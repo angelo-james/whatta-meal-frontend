@@ -1,15 +1,9 @@
-const getAllRecipes = () => {
-    axios.get('http://localhost:3000/users/recipes')
+const getUserRecipes = () => {
+    let userId = JSON.parse(localStorage.getItem('userInfo'))[0].id;
     
-    .then( result => {
-            let res = result
-            document.getElementById('users-body').innerHTML = showRecipes(res.data);
-        }).catch(err => {
-            return 'you are an error'
-        }) 
+    axios.get(`http://localhost:3000/users/${userId}/recipes`)
+
+    .then(result => {
+        recipesTemplate(result)
+    })
 }
-const createButton = () => {
-    let button = document.querySelector('#test-button');
-    button.addEventListener('click', getAllUsers)
-}
-document.addEventListener('DOMContentLoaded', createButton)

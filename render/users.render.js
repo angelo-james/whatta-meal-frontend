@@ -1,36 +1,27 @@
-const getAllUsers = () => {
-    axios.get('http://localhost:3000/users')
-    
-    .then( result => {
-            let res = result
-            document.getElementById('users-body').innerHTML = showUsers(res.data);
+const validateUser = (event) => {
+    event.preventDefault();
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#userPassword").value;
+
+    axios.post('http://localhost:3000/users/login', {email, password})
+    .then(result => {
+            localStorage.setItem('userInfo', JSON.stringify(result.data));
+            userTemplate(result);
         }).catch(err => {
-            return 'you are an error'
+            return err;
         }) 
-}
-const createButton = () => {
-    let button = document.querySelector('#test-button');
-    button.addEventListener('click', getAllUsers)
 }
 
 const createForm = () => {
-    const userName = document.getElementById('userName')
+    const userName = document.getElementById('email')
     const password = document.getElementById('userPassword')
-    axios.post('http://localhost:3000/users',
+    axios.get('http://localhost:3000/users',
         { 
             "name": userName.value,
             "userId": "Test", 
             "password": password.value, 
             "email": "test@test.com"
         })
-        .then(results =>{
-            document.getElementById('user-alert').style.display = 'block'
-            userName.value = ""
-            password.value = ""
-            return results
-        })
 }
 
 document.getElementById('pressHarder').addEventListener('click', createForm)
-
-document.addEventListener('DOMContentLoaded', createButton)
