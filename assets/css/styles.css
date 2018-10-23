@@ -13,3 +13,7 @@ body {
 #recipe-form {
     display: none;
 }
+
+#create-user-form {
+    display: none;
+}

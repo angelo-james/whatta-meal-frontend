@@ -1,9 +1,17 @@
 const getUserRecipes = () => {
     let userId = JSON.parse(localStorage.getItem('userInfo'))[0].id;
     
-    axios.get(`http://localhost:3000/recipes/${userId}`)
+    axios.get(`https://whatta-meal.herokuapp.com/${userId}`)
 
     .then(result => {
         recipesTemplate(result)
     })
+}
+
+const delteRecipe = (recipeId) => {
+axios.del
+}
+
+const updateRecipe = () => {
+    
 }
