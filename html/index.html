@@ -9,27 +9,172 @@
     <title>Whatta Meal</title>
 </head>
 <body>
-
-    <h1 class="display-3 m-1" style="text-align:center">Whatta Meal</h1>
-        <div class="container border">
-            <form onsubmit="validateUser(event)" class="form">
-                <div class="form-group">
-                    <label for="userName" class="control-label">
-                        Email:
-                    </label>
-                    <input required type="text" class="form-control" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="userPassword" class="control-label">
-                        Password:
-                    </label>
-                    <input required type="password" class="form-control" id="userPassword">
-                </div>
-                <div class="form-group">
-                <input id='pressHarder' type='submit' class="btn btn-lg btn-primary" value="Sign In">
-                </div>
-            </form>
+<!--==========================================================================================-->
+    <!-- nav bar -->
+<!--==========================================================================================-->
+    <div class="container" id="navigation-bar">
+    <nav class="navbar navbar-light bg-light border-bottom border-success">
+        <a class="navbar-brand" href="#">
+            Whatta Meal
+        </a>
+        <div>
+            <button id="view-recipes" class="btn btn-success">View Recipes</button>
+            <button id="view-recipe-form" class="btn btn-success">New Recipe</button>
+            <button id="view-login-form" class="btn btn-success">Logout</button>
         </div>
+    </nav>
+    </div>
+
+    <!--==========================================================================================-->
+    <!-- user login form -->
+    <!--==========================================================================================-->
+
+    <div class="container border border-success my-5 w-25" id="login-form">
+        
+        <form onsubmit="validateUser(event)" class="form">
+            <h1 class="display-3 m-1 text-center">Whatta Meal</h1>
+            <div class="form-group text-center">
+                <label for="userName" class="control-label"></label>
+                <input required type="text" class="form-control text-center" id="email" placeholder="Email">
+            </div>
+            <div class="form-group text-center">
+                <label for="userPassword" class="control-label"></label>
+                <input required type="password" class="form-control text-center" id="userPassword" placeholder="Password">
+                <small id="passwordHelpInline" class="text-muted text-center" style="text-align:center">
+                        Must be 8-20 characters long.
+                </small>
+            </div>
+            <div class="form-group text-center">
+            <input id='login' type='submit' class="btn btn-lg btn-success" value="Sign In">
+            <br>
+            <input id='createUser' type='submit' class="btn btn-lg btn-success m-1" value="Create Account">
+            </div>
+        </form>
+    </div>
+<!--==========================================================================================-->
+    <!-- user login form -->
+    <!--==========================================================================================-->
+    
+    <!-- <div class="container border border-success mt-5 mb-5 w-25" id="login-form">
+        
+        <form onsubmit="validateUser(event)" class="form text-center">
+            <div class="row float-right">
+            <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <h1 class="display-3 m-1 text-center">Whatta Meal</h1>
+            <p>Create User Account</p>
+            <div class="form-group text-center">
+                <label for="userName" class="control-label"></label>
+                <input required type="text" class="form-control text-center" id="email" placeholder="Email">
+            </div>
+            <div class="form-group text-center">
+                <label for="userPassword" class="control-label"></label>
+                <input required type="password" class="form-control text-center" id="userPassword" placeholder="Password">
+                <small id="passwordHelpInline" class="text-muted text-center" style="text-align:center">
+                        Must be 8-20 characters long.
+                </small>
+            </div>
+            <div class="form-group text-center">
+            <input id='login' type='submit' class="btn btn-lg btn-success" value="Sign In">
+            <br>
+            <input id='createUser' type='submit' class="btn btn-lg btn-success m-1" value="Create Account">
+            </div>
+        </form>
+    </div> -->
+
+    <!--==========================================================================================-->
+    <!-- display for recipes -->
+    <!--==========================================================================================-->
+
+    <div class="container text-center mb-5 mt-5" id="recipe-display">
+        <div class="row" id="card-row">
+
+            <div class="card mx-auto w-25 text-center border-success">
+            <img class="card-img-top" src="https://source.unsplash.com/1600x901/?food" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Pizza</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quaerat ea cupiditate exercitationem, odit, suscipit incidunt enim porro nesciunt, quos quam sit animi magnam ullam.</p>
+                <a href="#" class="btn btn-success">View Recipe</a>
+            </div>
+            </div>
+
+            <div class="card mx-auto w-25 text-center border-success">
+            <img class="card-img-top" src="https://source.unsplash.com/1600x902/?food" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Spaghetti</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem ea aperiam. Quasi necessitatibus voluptatibus deserunt eum expedita maxime veritatis.</p>
+                <a href="#" class="btn btn-success">View Recipe</a>
+            </div>
+            </div>
+
+            <div class="card mx-auto w-25 text-center border-success">
+            <img class="card-img-top" src="https://source.unsplash.com/1600x903/?food" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Tacos</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut repellat iste voluptatem doloremque maxime, deserunt officiis libero harum provident eos odio.</p>
+                <a href="#" class="btn btn-success">View Recipe</a>
+            </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="card mx-auto w-25 text-center border-success">
+            <img class="card-img-top" src="https://source.unsplash.com/1600x904/?food" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Pizza</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quaerat ea cupiditate exercitationem, odit, suscipit incidunt enim porro nesciunt, quos quam sit animi magnam ullam.</p>
+                <a href="#" class="btn btn-success">View Recipe</a>
+            </div>
+            </div>
+
+            <div class="card mx-auto w-25 text-center border-success">
+            <img class="card-img-top" src="https://source.unsplash.com/1600x905/?food" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Spaghetti</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem ea aperiam. Quasi necessitatibus voluptatibus deserunt eum expedita maxime veritatis.</p>
+                <a href="#" class="btn btn-success">View Recipe</a>
+            </div>
+            </div>
+
+            <div class="card mx-auto w-25 text-center border-success">
+            <img class="card-img-top" src="https://source.unsplash.com/1600x906/?food" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Tacos</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ut repellat iste voluptatem doloremque maxime, deserunt officiis libero harum provident eos odio.</p>
+                <a href="#" class="btn btn-success">View Recipe</a>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+<!--==========================================================================================-->
+    <!-- form for recipes -->
+<!--==========================================================================================-->
+    <div class="container border border-success mb-5 w-50 text-center mt-5" id="recipe-form">
+        <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Recipe Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Ingredients</label>
+            <input type="text" class="form-control mb-3 text-center" placeholder="Quantity">
+            <input type="text" class="form-control mb-3 text-center" placeholder="Measurement">
+            <input type="text" class="form-control text-center" placeholder="Ingredient">
+            <input id='addIngredient' type='submit' class="btn btn-lg btn-success mb-1 mt-2" value="Add Ingredient">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <input id='newRecipe' type='submit' class="btn btn-lg btn-success m-3" value="Add Description">
+        </form>
+    </div>
     
     <!--==========================================================================================-->
     
@@ -39,6 +184,7 @@
     <script src="../render/users.render.js"></script>
     <script src="../templates/recipes.template.js"></script>
     <script src="../render/recipes.render.js"></script>
+    <script src="../templates/nav.template.js"></script>
     <script src="../js/index.js"></script>
 </body>
 </html>

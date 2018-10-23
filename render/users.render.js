@@ -5,23 +5,13 @@ const validateUser = (event) => {
 
     axios.post('http://localhost:3000/users/login', {email, password})
     .then(result => {
-            localStorage.setItem('userInfo', JSON.stringify(result.data));
-            userTemplate(result);
-        }).catch(err => {
-            return err;
-        }) 
+        if(result.data.length < 1) {
+            alert('Invalid login or password.')
+        } else {
+            localStorage.setItem('userInfo', JSON.stringify(result.data))
+            userTemplate(result)
+        }
+    })
 }
 
-const createForm = () => {
-    const userName = document.getElementById('email')
-    const password = document.getElementById('userPassword')
-    axios.get('http://localhost:3000/users',
-        { 
-            "name": userName.value,
-            "userId": "Test", 
-            "password": password.value, 
-            "email": "test@test.com"
-        })
-}
-
-document.getElementById('pressHarder').addEventListener('click', createForm)
+document.getElementById('login').addEventListener('click', validateUser)

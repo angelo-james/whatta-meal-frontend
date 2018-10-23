@@ -1,3 +1,15 @@
 body {
-    background-image: linear-gradient(to right, rgba(4, 155, 172, 0.66) , white);
+    background-color: #FAFBFC;
+}
+
+#navigation-bar {
+    display: none;
+}
+
+#recipe-display {
+    display: none;
+}
+
+#recipe-form {
+    display: none;
 }
