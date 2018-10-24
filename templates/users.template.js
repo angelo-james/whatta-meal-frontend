@@ -9,5 +9,5 @@ const userTemplate = (result) => {
     document.querySelector("#user-name").innerHTML = userName
 
 
-    getUserRecipes(result.data[0].id);
+    // getUserRecipes(result.data[0].id);
 }

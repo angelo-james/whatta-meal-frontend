@@ -108,15 +108,6 @@
     <div class="container text-center mb-5 mt-5" id="recipe-display">
         <div class="row" id="card-row">
 
-            <div class="card mx-auto w-25 text-center border-success" id="1">
-            <img class="card-img-top" src="https://source.unsplash.com/1600x901/?food" alt="Card image cap">
-            <div class="card-body text-center">
-                <h5 class="card-title">Spaghetti</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem ea aperiam. Quasi necessitatibus voluptatibus deserunt eum expedita maxime veritatis.</p>
-                <button onclick="displayRecipeIngredients()" class="btn btn-success">View Recipe</button>
-            </div>
-            </div>
-
         </div>
     </div>
 <!--==========================================================================================-->
@@ -151,17 +142,12 @@
         <div id="display-recipe-ingredients">
             <img class="card-img-top" src="https://source.unsplash.com/1600x902/?food" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title text-center text-uppercase" id="recipe-name"></h5>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+            <ul class="container list-group list-group-flush pl-5 text-uppercase" id="ingredient-list">
             </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+            <div class="card-body text-center" id="delete-button">
+                <!-- <button onclick="updateRecipe()" class="card-link btn btn-success">Edit Recipe</button> -->
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@ const validateUser = (event) => {
                 alert('Invalid login or password.')
             } else {
                 localStorage.setItem("userInfo", JSON.stringify(result.data))
-                userTemplate(result)
+                getUserRecipes(result)
             }
         })
 }
