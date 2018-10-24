@@ -1,11 +1,13 @@
 const viewRecipes = () => {
     document.querySelector("#recipe-display").style.display = "block";
     document.querySelector("#recipe-form").style.display = "none";
+    document.querySelector("#display-recipe-ingredients").style.display = "none";
 }
 
 const viewRecipeForm = () => {
     document.querySelector("#recipe-display").style.display = "none";
     document.querySelector("#recipe-form").style.display = "block";
+    document.querySelector("#display-recipe-ingredients").style.display = "none";
 }
 
 const viewLoginForm = () => {
@@ -15,7 +17,7 @@ const viewLoginForm = () => {
     document.querySelector("#recipe-display").style.display = "none";
     document.querySelector("#recipe-form").style.display = "none";
 }
-const createUser = () => {
+const showCreateUser = () => {
     document.querySelector("#login-form").style.display = "none";
     document.querySelector("#create-user-form").style.display = "block";
 }
@@ -23,8 +25,14 @@ const closeCreateUserForm = () => {
     document.querySelector("#login-form").style.display = "block";
     document.querySelector("#create-user-form").style.display = "none";
 }
+const displayRecipeIngredients = () => {
+    document.querySelector("#display-recipe-ingredients").style.display = "block";
+    document.querySelector("#recipe-display").style.display = "none";
+    recipe-display
+}
+document.getElementById('display-recipe-ingredients').addEventListener('click', displayRecipeIngredients)
 document.getElementById('close-create-user-form').addEventListener('click', closeCreateUserForm)
-document.getElementById('create-user').addEventListener('click', createUser)
+document.getElementById('create-user').addEventListener('click', showCreateUser)
 document.getElementById('view-recipes').addEventListener('click', viewRecipes)
 document.getElementById('view-recipe-form').addEventListener('click', viewRecipeForm)
 document.getElementById('view-login-form').addEventListener('click', viewLoginForm)

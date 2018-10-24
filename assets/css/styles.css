@@ -17,3 +17,7 @@ body {
 #create-user-form {
     display: none;
 }
+
+#display-recipe-ingredients {
+    display: none;
+}
