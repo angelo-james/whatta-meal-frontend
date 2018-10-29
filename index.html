@@ -106,7 +106,7 @@
     <!--==========================================================================================-->
 
     <div class="container text-center mb-5 mt-5" id="recipe-display">
-        <div class="row" id="card-row">
+        <div class="row card-group" id="card-row">
 
         </div>
     </div>
@@ -152,6 +152,23 @@
         </div>
     </div>
 <!--==========================================================================================-->
+<!-- display for creating new recipe -->
+<!--==========================================================================================-->
+
+    <div class="card w-50 mx-auto mb-5 mt-5">
+        <div id="display-new-recipe-ingredients">
+            <div class="card-body">
+                <h5 class="card-title text-center text-uppercase" id="recipe-name"></h5>
+            </div>
+            <ul class="container list-group list-group-flush pl-5 text-uppercase" id="ingredient-list">
+            </ul>
+            <div class="card-body text-center" id="delete-button">
+                <button onclick="" class="text-center btn btn-success">Submit Recipe</button>
+            </div>
+        </div>
+    </div>
+
+    <!--==========================================================================================-->
     
     <!--==========================================================================================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>

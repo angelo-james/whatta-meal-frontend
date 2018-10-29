@@ -3,12 +3,15 @@ const getUserRecipes = (result) => {
     axios.get(`https://whatta-meal.herokuapp.com/recipes/${userId}`)
     
     .then(result => {
-        console.log(JSON.stringify(result).status)
-        if(JSON.stringify(result).status === 404) {
+        console.log("recipes get result", result)
+        if(result.status === 404) {
             userTemplate();
         } else {
             recipesTemplate(result)
         }
+    })
+    .catch(error => {
+        userTemplate()
     })
 }
 
@@ -26,7 +29,7 @@ const delteRecipe = (recipeId) => {
     if (confirm('Are you sure you want to delete this recipe?')) {
         axios.delete(`https://whatta-meal.herokuapp.com/recipes/${recipeId}`)
             .then(result => {
-                console.log(result)
+                viewRecipes();
             })
     }
 }
